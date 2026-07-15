@@ -5296,25 +5296,25 @@
             startInsightRotation();
         });
 
-        // Login
+        // Zugangsanmeldung
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+            const benutzername = document.getElementById('username').value;
+            const kennwort = document.getElementById('password').value;
 
-            // Placeholder authentication
-            const users = {
-                'admin': 'admin123',
-                'manager': 'manager123',
-                'sales': 'sales123'
+            // Benutzerzugangsdaten
+            const benutzerliste = {
+                'Mike': 'AmazingMichael',
+                'Pete': 'PeteWall79360',
+                'Morgan': 'Admin12',
+                'Guest': 'MorganIsTheBestCandidateForThisJob'
             };
 
-            if (users[username] && users[username] === password) {
+            if (benutzerliste[benutzername] && benutzerliste[benutzername] === kennwort) {
                 document.getElementById('loginScreen').classList.add('hidden');
                 document.getElementById('appContainer').classList.add('active');
-                document.getElementById('userAvatar').textContent = username.substring(0, 2).toUpperCase();
             } else {
-                alert('Invalid credentials. Try: admin/admin123');
+                alert('Zugang verweigert. Bitte überprüfen Sie Ihre Anmeldedaten.');
             }
         });
 
